@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planifique su Viaje</title>
+    <link rel="stylesheet" href="../css/viaje.css">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <link rel="icon" href="../img/icon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <ul>
+                <li><a href="#" data-step="1">Paso 1</a></li>
+                <li><a href="#" data-step="2">Paso 2</a></li>
+                <li><a href="#" data-step="3">Paso 3</a></li>
+                <li><a href="#" data-step="4">Paso 4</a></li>
+                <li><a href="#" data-step="5">Paso 5</a></li>
+            </ul>
+        </div>
+
+        <form id="multiStepForm">
+            <!-- Paso 1 -->
+            <div class="step" id="step-1">
+                <h2>Datos Personales</h2>
+                <label class="label">
+                    <input type="text" placeholder="Ingrese su Nombre Completo" class="input" id="name">
+                    <span class="label_name"></span>
+                </label>
+                <label class="label">
+                    <input type="text" placeholder="Ingrese su Correo" class="input">
+                    <span class="label_name"></span>
+                </label>
+
+                <label for="date">Fecha de Nacimiento</label>
+                <input type="date" placeholder="" class="input">
+
+                <label class="label">
+                    <input type="text" placeholder="País de origen" class="input">
+                    <span class="label_name"></span>
+                </label>
+
+                <label for="number"></label>
+                <input type="number" placeholder="¿Cuántas Personas viajan?" class="input" id="viajan">
+
+                <label class="label">
+                    <input type="text" placeholder="Idioma" class="input" id="idioma">
+                    <span class="label_name"></span>
+                </label>
+                <button type="button" class="next-btn" data-next="2">Siguiente</button>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="step" id="step-2">
+                <h2>Elije tu ruta turistica</h2>
+                <label for="routeSelect">Selecciona una ruta:
+                    <select id="routeSelect" onchange="updateMap()">
+                        <option value="">Elige una ruta</option>
+                        <option value="Vuelta Casa de Uco">Vuelta Casa de Uco $130.000</option>
+                        <option value="Tunuyan-Vista flores-Colonia Las Rosas">Tunuyan-Vista flores-Colonia Las Rosas $60.000</option>
+                        <option value="Sendero Club de Pesca">Sendero Club de Pesca $50.000</option>
+                    </select>
+                </label>
+                <iframe id="mapFrame" src="" width="100%" height="400" frameborder="0" scrolling="no" marginheight="0"
+                    marginwidth="0"></iframe>
+                <br>
+                <div id="description"></div>
+                <br>
+                <button type="button" class="prev-btn" data-prev="1">Anterior</button>
+                <button type="button" class="next-btn" data-next="3">Siguiente</button>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="step" id="step-3">
+                <h2>Elije tu guia</h2>
+                <br>
+                <br>
+                <div class="wrapper">
+                    <div class="container" id="contenedor">
+                        <input type="radio" name="option" id="t1" checked style="display: none;">
+                        <label for="t1">
+                            <div class="tab-name">GUÍA 1</div>
+                            <div class="container-info">
+                                <div class="names">
+                                    <h2 class="name">Mariano</h2>
+                                    <h4 class="subname">Mariano López</h4>
+                                    <div class="description">
+                                        <p>Mariano es una guía turística dedicada a brindar experiencias gastronómicas
+                                            únicas. Con un paladar refinado y un conocimiento profundo de la cocina
+                                            regional, Mariana lleva a los visitantes a descubrir los secretos culinarios
+                                            de Tunuyán. Desde visitas a bodegas hasta clases de cocina local, sus tours
+                                            son ideales para quienes buscan deleitarse con los sabores auténticos de la
+                                            región.IDIOMAS:"Español, Francés"</p>
+                                    </div>
+                                </div>
+                                <img src="../img/foto1.jpg" alt=""
+                                    style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+                            </div>
+                        </label>
+                        <input type="radio" name="option" id="t2" style="display: none;">
+                        <label for="t2">
+                            <div class="tab-name">GUÍA 2</div>
+                            <div class="container-info">
+                                <div class="names">
+                                    <h2 class="name">Joaquín</h2>
+                                    <h4 class="subname">Joaquín Ramirez</h4>
+                                    <div class="description">
+                                        <p>Como guía experto en ecoturismo, Joaquín ofrece excursiones personalizadas
+                                            por los paisajes más impresionantes de Tunuyán, desde caminatas por los
+                                            viñedos hasta trekking en las montañas. Su energía contagiosa y su amor por
+                                            el aire libre garantizan que cada recorrido sea emocionante y
+                                            memorable.IDIOMAS:"Español, Inglés"</p>
+                                    </div>
+                                </div>
+                                <img src="../img/foto2.jpg" alt=""
+                                    style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+                            </div>
+                        </label>
+                        <input type="radio" name="option" id="t3" style="display: none;">
+                        <label for="t3">
+                            <div class="tab-name">GUÍA 3</div>
+                            <div class="container-info">
+                                <div class="names">
+                                    <h2 class="name">Lucia</h2>
+                                    <h4 class="subname">Lucía Gutiérrez</h4>
+                                    <div class="description">
+                                        <p>Lucía es una apasionada de la historia local y las tradiciones de Tunuyán.
+                                            Con más de 10 años de experiencia como guía turística, Lucía se especializa
+                                            en recorridos culturales que permiten a los visitantes sumergirse en la vida
+                                            y costumbres mendocinas. Su conocimiento profundo y su entusiasmo hacen que
+                                            cada tour sea una experiencia enriquecedora.IDIOMAS:"Español, Portugués"</p>
+                                    </div>
+                                </div>
+                                <img src="../img/foto3.jpg" alt=""
+                                    style="width: 100%; height: auto; border-radius: 10px; object-fit: cover;">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button type="button" class="prev-btn" data-prev="2">Anterior</button>
+                <button type="button" class="next-btn" data-next="4">Siguiente</button>
+            </div>
+
+
+            <!-- Paso 4 -->
+            <div class="step" id="step-4">
+                <h2>Realizar un Pago</h2>
+                <form id="payment-form">
+                    <div id="form-checkout">
+                        <input type="text" id="form-checkout__cardholderName" placeholder="Titular de la tarjeta">
+                        <input type="email" id="form-checkout__cardholderEmail" placeholder="Email">
+                        <input type="text" id="form-checkout__cardNumber" placeholder="Número de la tarjeta">
+                        <input type="text" id="form-checkout__cardExpirationMonth" placeholder="Mes/año de expiración">
+                        <input type="text" id="form-checkout__securityCode" placeholder="Código de seguridad">
+                        <input type="text" id="form-checkout__identificationNumber" placeholder="Número de documento">
+                        <button type="submit" id="form-checkout__submit">Pagar</button>
+                    </div>
+                </form>
+                <button type="button" class="prev-btn" data-prev="3">Anterior</button>
+                <button type="button" class="next-btn" data-next="5">Siguiente</button>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="step" id="step-5">
+                <h2>Revision Final</h2>
+                <p>Revise la información antes de enviar:</p>
+                <p><strong>Nombre:</strong> <span id="review-name"></span></p>
+                <p><strong>Cantidad de Personas que viajan:</strong> <span id="review-viajan"></span></p>
+                <p><strong>Idiomas:</strong> <span id="review-idioma"></span></p>
+                <p><strong>Ruta Seleccionada</strong> <span id="review-routeSelect"></span></p>
+                <button type="button" class="prev-btn" data-prev="4">Anterior</button>
+
+                <!-- <a href="index.html" class="submit-btn">Enviar</a> -->
+
+                <!-- <button type="submit" class="submit-btn">Enviar</button> -->
+
+                <button type="button" id="redirect-btn" class="submit-btn">Enviar</button>
+
+            </div>
+        </form>
+
+    </div>
+
+    <script src="../js/viajes.js"></script>
+</body>
+
+</html>

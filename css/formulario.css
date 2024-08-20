@@ -1,0 +1,14 @@
+body{
+    background-image:url(../img/fondo.jpg) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    margin: 0 auto;
+}
+.container {
+    align-content: center;
+    margin: 0 auto;
+}

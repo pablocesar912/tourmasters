@@ -1,0 +1,172 @@
+nav {
+    display: flex;
+    text-align: right;
+    justify-content: space-between;
+    padding: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-weight: bold;
+    justify-content: center;
+}
+
+ul {
+    color: white;
+    font-size: 18px;
+    text-align: right;
+    align-items: flex-start;
+    
+}
+
+ul li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+a {
+    color: rgb(15, 15, 15);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+img{
+    position: static;
+    width: 200px;
+    height: auto;
+}
+
+.login-button-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.login-button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #0056b3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-hover {
+    background-color: #0056b3;
+}
+
+body{
+    background-color: rgb(195, 228, 255);
+    font-family: Arial, sans-serif;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    
+}
+
+h1{
+    font-size: 3em;
+    color: #000000;
+    margin-top: -80px;
+}
+
+h2{
+    font-size: 2em;
+    color: rgb(36, 75, 44);
+}
+
+p{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.highlight{
+    color: #007bff;
+    font-weight: bold;
+}
+
+.section{
+    margin-bottom: 40px;
+    margin: 15px;
+}
+
+.section h3{
+    font-size: 1.5em;
+    color: #222222;
+}
+
+.section p{
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.banner {
+    background-image: url(../img/montañas.jpg);
+    background-size: cover;
+    background-position: center; 
+    width: auto;
+    height: 800px;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+
+.button-container {
+    border: solid white 10px;
+    border-radius: 10px;
+    background-image: url(../img/tyan-boton.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end; 
+    padding: 20px; 
+    border: solid #0056b3 10px;
+}
+
+.button {
+    background-color: #0056b3;
+    height: 50px;
+    width: 100%; 
+    font-size: larger;
+    border: #5ca7f8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+.button:hover{
+    background-color: #00fd54;
+    border: solid white 3px;
+}
+
+.titulo p{
+    color: rgb(2, 2, 2);
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 30px;
+}
+
+
+.titulo h1{
+    font-weight: bolder;
+    font-style: italic;
+}
