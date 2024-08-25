@@ -1,25 +1,20 @@
+/* Estilos base */
 nav {
     display: flex;
-    text-align: right;
     justify-content: space-between;
-    padding: 20px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 20px 5%;
     font-weight: bold;
-    justify-content: center;
 }
 
 ul {
     color: white;
     font-size: 18px;
     text-align: right;
-    align-items: flex-start;
-    
 }
 
-ul li{
+ul li {
     display: inline-block;
-    padding: 0px 20px;
+    padding: 0 20px;
 }
 
 a {
@@ -31,8 +26,7 @@ a:hover {
     color: #007bff;
 }
 
-img{
-    position: static;
+img {
     width: 200px;
     height: auto;
 }
@@ -45,7 +39,6 @@ img{
 
 .login-button {
     display: inline-block;
-    text-decoration: none;
     color: white;
     background-color: #0056b3;
     padding: 10px 20px;
@@ -54,58 +47,57 @@ img{
     transition: background-color 0.3s ease;
 }
 
-.login-hover {
-    background-color: #0056b3;
+.login-button:hover {
+    background-color: #007bff;
 }
 
-body{
+body {
     background-color: rgb(195, 228, 255);
     font-family: Arial, sans-serif;
 }
 
-.titulo{
+.titulo {
     text-align: center;
 }
 
-.container{
+.container {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    
 }
 
-h1{
+h1 {
     font-size: 3em;
     color: #000000;
     margin-top: -80px;
 }
 
-h2{
+h2 {
     font-size: 2em;
     color: rgb(36, 75, 44);
 }
 
-p{
+p {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
-.highlight{
+.highlight {
     color: #007bff;
     font-weight: bold;
 }
 
-.section{
+.section {
     margin-bottom: 40px;
     margin: 15px;
 }
 
-.section h3{
+.section h3 {
     font-size: 1.5em;
     color: #222222;
 }
 
-.section p{
+.section p {
     margin-bottom: 10px;
     color: #000000;
 }
@@ -113,38 +105,32 @@ p{
 .banner {
     background-image: url(../img/montañas.jpg);
     background-size: cover;
-    background-position: center; 
-    width: auto;
+    background-position: center;
     height: 800px;
     overflow: hidden;
-    flex-direction: column;
 }
 
-
+/* Estilos para la clase .button-container (solo aplicables en pantallas grandes) */
 .button-container {
-    border: solid white 10px;
+    border: solid #0056b3 10px;
     border-radius: 10px;
     background-image: url(../img/tyan-boton.jpg);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     width: 300px;
     height: 300px;
     margin: 0 auto;
     padding: 20px;
     display: flex;
-    justify-content: center; 
-    align-items: flex-end; 
-    padding: 20px; 
-    border: solid #0056b3 10px;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .button {
     background-color: #0056b3;
     height: 50px;
-    width: 100%; 
+    width: 100%;
     font-size: larger;
-    border: #5ca7f8;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -152,21 +138,118 @@ p{
     color: white;
 }
 
-
-.button:hover{
+.button:hover {
     background-color: #00fd54;
     border: solid white 3px;
 }
 
-.titulo p{
+.titulo p {
     color: rgb(2, 2, 2);
     font-weight: bolder;
     font-style: italic;
     font-size: 30px;
 }
 
-
-.titulo h1{
+.titulo h1 {
     font-weight: bolder;
     font-style: italic;
+}
+
+/* Media Queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    ul {
+        text-align: center;
+    }
+
+    ul li {
+        padding: 10px 0;
+        display: block;
+    }
+
+    .login-button-container {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 20px;
+    }
+
+    .container {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-top: -50px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .banner {
+        height: 600px;
+    }
+
+    /* Elimina los estilos de .button-container y muestra solo el botón */
+    .button-container {
+        background: none;
+        border: none;
+        width: auto;
+        height: auto;
+        padding: 0;
+    }
+
+    .button {
+        width: 50%;
+        font-size: medium;
+    }
+}
+
+/* Media Queries para tablets */
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.8em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    .banner {
+        height: 700px;
+    }
+
+    /* Elimina los estilos de .button-container y muestra solo el botón */
+    .button-container {
+        background: none;
+        border: none;
+        width: auto;
+        height: auto;
+        padding: 0;
+    }
+
+    .button {
+        width: 50%;
+        font-size: large;
+    }
 }
